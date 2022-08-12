@@ -36,3 +36,37 @@
     transform: rotate(360deg);
   }
 }
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 15px;
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  opacity: 90%;
+  z-index: 1;
+}
+
+.headerNav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.redirect{
+  list-style-type: none;
+  flex-direction: row;
+  padding: 0px 45px;
+  font-weight: 500;
+}
+
+a{
+  color: black;
+  text-decoration: none;
+}
+
+.redirect:hover{
+  text-decoration: underline;
+}
