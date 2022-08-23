@@ -114,7 +114,12 @@ a{
 }
 
 .inactivo{
+  transition: 200ms;
   pointer-events: none;
   cursor: not-allowed;
   opacity: 70%;
+}
+
+.activo{
+  transition: 200ms;
 }

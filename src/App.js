@@ -20,7 +20,7 @@ console.log(numeroProductos);
     <div>
       <NavBar />
       <ItemListContainer />
-      <Contador stock="15" initial="1" agregarProducto={addToCart}/>
+      <Contador stock={15} initial={1} agregarProducto={addToCart}/>
     </div>
   );
 }
