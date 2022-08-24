@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import './App.css';
-import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
-import {Contador} from './components/ItemCount';
+import NavBar from './components/NavBar/NavBar';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import {Contador} from './components/ItemCount/ItemCount';
 
 
 
