@@ -29,7 +29,8 @@ const items =[
     title: "Gorra",
     price: "$3.000",
     pictureUrl: gorra
-}]
+}
+]
 
 
 const ItemList = ()=>{

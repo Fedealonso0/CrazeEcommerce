@@ -82,9 +82,7 @@ a{
 }
 
 .itemCounter{
-  width: 18%;
-  margin-top: 10%;
-  margin-left: 10px;
+  width: 60%;
 }
 
 .masOMenos{
@@ -156,4 +154,43 @@ a{
 
 .precioItem{
   font-size: 1.5vw;
+}
+
+.detalleDeProductos{
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.detailImg{
+  width: 50%;
+  height: 100%;
+}
+.detailDisplay{
+  display: flex;
+  border: 1px solid rgb(216, 216, 216);
+  margin: 10px;
+}
+
+.infoProd{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items:flex-start;
+  margin-left: 4%;
+}
+
+.precioDetail{
+  font-weight: 500;
+  font-size: larger;
+}
+
+.descripDetail{
+  font-size: larger;
+  margin-top: 25%;
+  margin-bottom: 25%;
+}
+
+.talles{
+  margin-bottom: 5%;
 }

@@ -1,26 +1,27 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import {Contador} from './components/ItemCount/ItemCount';
-
+// import {Contador} from './components/ItemCount/ItemCount';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 
 
 function App() {
 
-const [numeroProductos, setNumeroProductos] = useState(0);
+// const [numeroProductos, setNumeroProductos] = useState(0);
 
-const addToCart= (productos)=>{
-  setNumeroProductos(productos);
-}
+// const addToCart= (productos)=>{
+//   setNumeroProductos(productos);
+// }
 
-console.log(numeroProductos);
+
 
   return (
     <div>
       <NavBar />
       <ItemListContainer />
-      <Contador stock={15} initial={1} agregarProducto={addToCart}/>
+      <ItemDetailContainer />
+      {/* <Contador stock={15} initial={1} agregarProducto={addToCart}/> */}
     </div>
   );
 }
