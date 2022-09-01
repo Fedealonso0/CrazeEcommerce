@@ -156,11 +156,6 @@ a{
   font-size: 1.5vw;
 }
 
-.detalleDeProductos{
-  width: 70%;
-  margin-left: 15%;
-  margin-right: 15%;
-}
 
 .detailImg{
   width: 50%;
@@ -168,8 +163,9 @@ a{
 }
 .detailDisplay{
   display: flex;
-  border: 1px solid rgb(216, 216, 216);
-  margin: 10px;
+  margin-top: 90px;
+  margin-bottom: 20px;
+  width: 100%
 }
 
 .infoProd{
