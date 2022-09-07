@@ -24,7 +24,8 @@ export const Contador = ({stock, initial, agregarProducto})=>{
             </div>
             <button onClick={()=>(agregarProducto(contador))} 
             className={`addToCart ${contador>0 ? 'activo' : 'inactivo'}`}>
-                 Agregar al carrito</button>
+            Agregar al carrito 
+            </button>
         </div>
     )
 }
