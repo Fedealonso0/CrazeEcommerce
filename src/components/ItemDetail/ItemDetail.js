@@ -1,16 +1,19 @@
 import { Contador } from "../ItemCount/ItemCount"
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { CartContext } from "../../context/CartContext";
 
 
 const ItemDetail= ({producto})=>{
+    const {addProduct} = useContext(CartContext);
 
-    const [prodOnCart, setProdOnCart]= useState(0)
+    const [prodOnCart, setProdOnCart] = useState(0);
+
 
     const onAdd = (contador)=>{
-        // return console.log('OnAdd', contador);
         setProdOnCart(contador)
-        console.log(prodOnCart);
+        const newProduct={...producto, quantity:contador}
+        addProduct(newProduct);
     }
     
     return(
@@ -33,7 +36,7 @@ const ItemDetail= ({producto})=>{
                         <Contador stock={producto.stock} initial={1} agregarProducto={onAdd}/>
                         <p>Cantidad de productos en carrito: {prodOnCart}</p>
                         <Link to='/carrito'><button className={`finalCompra ${prodOnCart>0 ? 'activo' : 'inactivo'}`}>
-                         Finalizar Compra
+                         Pasar a pagar
                         </button></Link>
                         </div>
                     </div>

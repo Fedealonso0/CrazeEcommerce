@@ -196,3 +196,43 @@ a{
   background-color: lightgray;
   border: solid 1px darkslategrey;
 }
+
+.imgCarrito{
+  width: 25%;
+}
+
+.prodCarrito{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px;
+  margin: 15px;
+  border: 1px solid rgb(216, 216, 216);
+  border-radius: 5px;
+}
+
+.vaciarCart{
+  margin-top: 110px;
+  margin-left: 15px;
+  border: none;
+  background-color: white;
+  color: rgb(94, 94, 94);
+}
+
+.vaciarCart:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.infoProdCart{
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.removeFromCart{
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  font-size: medium;
+}
