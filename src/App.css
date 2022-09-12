@@ -236,3 +236,22 @@ a{
   cursor: pointer;
   font-size: medium;
 }
+
+.noProds{
+  margin-top: 250px;
+  text-align: center;
+  width: 100%;
+}
+
+.volverAComprar{
+  width: 100%;
+  margin-top: 35px;
+  text-align: center;
+  transition: 200ms;
+  font-style: italic;
+}
+
+.volverAComprar:hover{
+  transition: 200ms;
+  font-size:xx-large;
+}

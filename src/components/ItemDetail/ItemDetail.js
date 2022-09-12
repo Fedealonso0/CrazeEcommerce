@@ -8,12 +8,13 @@ const ItemDetail= ({producto})=>{
     const {addProduct} = useContext(CartContext);
 
     const [prodOnCart, setProdOnCart] = useState(0);
+    const [quantity, setQuantity] = useState(0);
 
 
     const onAdd = (contador)=>{
-        setProdOnCart(contador)
-        const newProduct={...producto, quantity:contador}
-        addProduct(newProduct);
+        setProdOnCart(prodOnCart+contador)
+        addProduct(producto, contador, prodOnCart);
+        setQuantity(contador)
     }
     
     return(
@@ -22,7 +23,7 @@ const ItemDetail= ({producto})=>{
                         <img src={producto.pictureUrl} alt="" className='detailImg'></img>
                         <div className='infoProd'>
                         <h1>{producto.title}</h1>
-                        <p className='precioDetail'>{producto.price}</p>
+                        <p className='precioDetail'>${producto.price}</p>
                         <p className='descripDetail'>{producto.description}</p> 
                         <label for='talle'>Elegi tu talle:</label>
                         <select name='talle' className='talles'>
@@ -34,10 +35,12 @@ const ItemDetail= ({producto})=>{
                             <option value='xxl'>XXL</option>
                         </select>
                         <Contador stock={producto.stock} initial={1} agregarProducto={onAdd}/>
-                        <p>Cantidad de productos en carrito: {prodOnCart}</p>
+                        {
+                            quantity>0 &&
                         <Link to='/carrito'><button className={`finalCompra ${prodOnCart>0 ? 'activo' : 'inactivo'}`}>
                          Pasar a pagar
                         </button></Link>
+                        }
                         </div>
                     </div>
         </div>
