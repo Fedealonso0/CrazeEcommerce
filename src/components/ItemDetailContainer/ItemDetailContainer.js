@@ -1,30 +1,30 @@
 import ItemDetail from "../ItemDetail/ItemDetail"
 import React, { useEffect, useState } from 'react'
-import { items } from '../../productDatabase/mockData'
-import { useParams } from "react-router-dom"
+import {  useParams } from "react-router-dom"
+import { collection, getDocs } from "firebase/firestore";
+import { db } from '../../utils/firebase'
 
 const ItemDetailContainer = ()=>{ 
-    const [productos, setProductos] = useState([])
 
-    const idProductostring = useParams();
-
-    const obtenerProductos = ()=>{
-        return new Promise((resolve, reject)=>{
-                resolve(items[idProductostring.id-1])
-        })
-    }
+    const  productId  = useParams();
+    
+    const [item, setItem] = useState({})
 
     useEffect(()=>{
-        const guardarproductos = async()=>{  
-                const listproductos = await obtenerProductos();
-                setProductos(listproductos);
+        const getData = async()=>{
+            const query = collection(db, "items");
+            const response = await getDocs(query);
+            const docs = response.docs
+            const data = docs.map(doc=>{return{...doc.data(), id: doc.id}})
+            const newData = data.find(element=>element.id === productId.id)
+            setItem(newData);
         }
-        guardarproductos();
-    }, )
+        getData()
+    }, [productId])
     
     return(
         <div>
-            <ItemDetail producto={productos} />
+            <ItemDetail producto={item} />
         </div>
     )
     }

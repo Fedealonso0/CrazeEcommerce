@@ -1,32 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import Item from '../Item/Item'
-import { items } from '../../productDatabase/mockData'
+import { collection, getDocs } from "firebase/firestore";
+import { db } from '../../utils/firebase'
 
 
 const ItemList = ()=>{
-    const [productos, setProductos] = useState([])
-
-
-    const obtenerProductos = ()=>{
-        return new Promise((resolve, reject)=>{
-            setTimeout(()=> {
-                resolve(items)
-            }, 2);
-        })
-    }
+     const [productos, setProductos] = useState([])
 
     useEffect(()=>{
-        const guardarproductos = async()=>{
-            try {
-                const listproductos = await obtenerProductos();
-                setProductos(listproductos);
-            } catch(error){
-                console.log("Hubo un error");
-            }
+        const getData = async()=>{
+            const query = collection(db, "items");
+            const response = await getDocs(query);
+            const docs = response.docs
+            const data = docs.map(doc=>{return{...doc.data(), id: doc.id}})
+            setProductos(data);
         }
-        guardarproductos();
+        getData()
     }, [])
-    
     
     return(
         <div className='listadoDeProductos'>

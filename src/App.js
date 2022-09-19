@@ -1,8 +1,6 @@
-// import { useState } from 'react';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-// import {Contador} from './components/ItemCount/ItemCount';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 // import Index from './components/Index/Index'
 import PagLanzamientos from './components/PagLanzamientos/PagLanzamientos';
@@ -12,13 +10,6 @@ import { CartProvider } from './context/CartContext';
 
 
 function App() {
-
-// const [numeroProductos, setNumeroProductos] = useState(0);
-
-// const addToCart= (productos)=>{
-//   setNumeroProductos(productos);
-// }
-
 
 
   return (
