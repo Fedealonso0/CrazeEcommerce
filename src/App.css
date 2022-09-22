@@ -47,7 +47,6 @@
   backdrop-filter: blur(50px);
   z-index: 1;
   top: 0;
-  border-bottom: 1px solid lightgray;
 }
 
 .headerNav{
@@ -61,6 +60,7 @@
   flex-direction: row;
   padding: 0px 45px;
   font-weight: 500;
+  display: flex;
 }
 
 a{
@@ -254,4 +254,50 @@ a{
 .volverAComprar:hover{
   transition: 200ms;
   font-size:xx-large;
+}
+
+.orderForm{
+  position: fixed;
+  left: 25%;
+  top: 30%;
+  width: 50%;
+  height: 20%;
+  background-color: white;
+  opacity: 100%;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.popup{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(39, 39, 39, 0.664);
+}
+
+.inputs{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.inputOrder{
+  width: 25%;
+  margin-top: 15px;
+}
+
+.orderButton{
+  width: 30%;
+    margin-left: 35%;
+    height: 30px;
+    margin-top: 15px;
+}
+
+.goToOrderButton{
+  width: 30%;
+  margin-left: 35%;
+  height: 40px;
+  margin-bottom: 25px;
+
 }

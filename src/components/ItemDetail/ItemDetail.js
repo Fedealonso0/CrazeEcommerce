@@ -8,13 +8,11 @@ const ItemDetail= ({producto})=>{
     const {addProduct} = useContext(CartContext);
 
     const [prodOnCart, setProdOnCart] = useState(0);
-    const [quantity, setQuantity] = useState(0);
 
 
     const onAdd = (contador)=>{
         setProdOnCart(prodOnCart+contador)
         addProduct(producto, contador, prodOnCart);
-        setQuantity(contador)
     }
     
     return(
@@ -26,21 +24,18 @@ const ItemDetail= ({producto})=>{
                         <p className='precioDetail'>${producto.price}</p>
                         <p className='descripDetail'>{producto.description}</p> 
                         <label for='talle'>Elegi tu talle:</label>
-                        <select name='talle' className='talles'>
-                            <option value='xs'>XS</option>
-                            <option value='s'>S</option>
-                            <option value='m'>M</option>
-                            <option value='l'>L</option>
-                            <option value='xl'>XL</option>
-                            <option value='xxl'>XXL</option>
+                        <select name='talle' className='talles' id="talle">
+                            <option value='XS'>XS</option>
+                            <option value='S'>S</option>
+                            <option value='M'>M</option>
+                            <option value='L'>L</option>
+                            <option value='XL'>XL</option>
+                            <option value='XXL'>XXL</option>
                         </select>
                         <Contador stock={producto.stock} initial={1} agregarProducto={onAdd}/>
-                        {
-                            quantity>0 &&
-                        <Link to='/carrito'><button className={`finalCompra ${prodOnCart>0 ? 'activo' : 'inactivo'}`}>
+                        <Link to='/carrito' className={`${prodOnCart>0 ? 'activo' : 'inactivo'}`}><button className="finalCompra">
                          Pasar a pagar
-                        </button></Link>
-                        }
+                        </button></Link>              
                         </div>
                     </div>
         </div>

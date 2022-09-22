@@ -19,7 +19,8 @@ export const CartProvider = ({children})=>{
             newList[productIndex].totalPrice = newList[productIndex].quantity * newList[productIndex].price;
             setProductCartList(newList)
         }else{ 
-            const newProduct={...product, quantity:qty, totalPrice: qty*product.price}
+            const size = document.getElementById("talle").value
+            const newProduct={...product, quantity:qty, totalPrice: qty*product.price, size: size}
             const newList = [...productCartList];
             newList.push(newProduct);
             setProductCartList(newList);
@@ -41,8 +42,13 @@ export const CartProvider = ({children})=>{
         return totalProducts;
     }
 
+    const getTotalPrice = ()=>{
+        const totalPriceProducts = productCartList.reduce((acc,item)=>acc + item.totalPrice,0);
+        return totalPriceProducts;
+    }
+
     return(
-        <CartContext.Provider value={{productCartList, addProduct, deleteProduct, clearCart, isInCart, getTotalProducts}}>
+        <CartContext.Provider value={{productCartList, addProduct, deleteProduct, clearCart, isInCart, getTotalProducts, getTotalPrice}}>
             {/*..components */}
             {children}
         </CartContext.Provider>
