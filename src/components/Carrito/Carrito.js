@@ -62,7 +62,7 @@ const Carrito =()=>{
             { formState === true &&
             <div className="popup">
                 <div className="orderForm">
-                <button onClick={()=> setFormState(false)} className="removeFromCart">X</button>
+                <button onClick={()=> setFormState(false)} className="removeFromCart" style={{fontWeight: "600"}}>x</button>
             <form onSubmit={sendOrder}>
                 <div className="inputs">
                 <input type="text" placeholder="Nombre completo" className="inputOrder"/>
